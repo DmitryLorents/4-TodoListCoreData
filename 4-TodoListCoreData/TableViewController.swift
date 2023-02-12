@@ -17,6 +17,22 @@ class TableViewController: UITableViewController {
        
     }
 
+    @IBAction func addTaskAction(_ sender: Any) {
+        let alertController = UIAlertController(title: "New task", message: "Enter the task", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { action in
+            let tf = alertController.textFields?.first
+            if let newTask = tf?.text {
+                self.tasks.insert(newTask, at: 0)
+                self.tableView.reloadData()
+            }
+        }
+        alertController.addTextField()
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true)
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
