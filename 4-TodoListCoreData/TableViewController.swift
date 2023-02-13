@@ -23,8 +23,16 @@ class TableViewController: UITableViewController {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    @IBAction func deleteTasksAction(_ sender: Any) {
         
-        
+        for task in tasks {
+            context.delete(task)
+        }
+        CoreDataManager.instance.saveContext()
+        tasks = []
+        tableView.reloadData()
     }
     
     @IBAction func addTaskAction(_ sender: Any) {
@@ -50,7 +58,7 @@ class TableViewController: UITableViewController {
         taskObject.title = title
         tasks.append(taskObject)
         CoreDataManager.instance.saveContext()
-    
+        
     }
     // MARK: - Table view data source
     
