@@ -12,7 +12,7 @@ class CoreDataManager {
     // MARK: - Core Data stack
     
     static let instance = CoreDataManager()
-    lazy var context = CoreDataManager().persistentContainer.viewContext
+    lazy var context = persistentContainer.viewContext
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -42,7 +42,7 @@ class CoreDataManager {
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
+    public func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
