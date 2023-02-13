@@ -11,9 +11,17 @@ import CoreData
 class TableViewController: UITableViewController {
     
     var tasks: [Tasks] = []
+    let context = CoreDataManager.instance.context
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let fetchRequest = Tasks.fetchRequest()
+        do {
+            tasks  = try (context.fetch(fetchRequest))
+        } catch {
+            print(error.localizedDescription)
+        }
 
        
     }
@@ -36,7 +44,6 @@ class TableViewController: UITableViewController {
     }
     
     func saveTask(withTitle title: String) {
-        let context = CoreDataManager.instance.context
         guard let entity  = NSEntityDescription.entity(forEntityName: "Tasks", in: context) else {return}
         let taskObject = Tasks(entity: entity, insertInto: context)
         taskObject.title = title
@@ -58,7 +65,8 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-       // cell.textLabel?.text = tasks[indexPath.row]
+        let task = tasks[indexPath.row]
+        cell.textLabel?.text = task.title
 
         return cell
     }
