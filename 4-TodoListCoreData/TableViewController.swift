@@ -36,7 +36,11 @@ class TableViewController: UITableViewController {
     }
     
     func saveTask(withTitle title: String) {
-        
+        let context = CoreDataManager.instance.context
+        guard let entity  = NSEntityDescription.entity(forEntityName: "Tasks", in: context) else {return}
+        let taskObject = Tasks(entity: entity, insertInto: context)
+        taskObject.title = title
+        CoreDataManager.instance.saveContext()
     }
     // MARK: - Table view data source
 
