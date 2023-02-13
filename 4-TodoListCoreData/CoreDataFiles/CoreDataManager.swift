@@ -11,7 +11,7 @@ import CoreData
 class CoreDataManager {
     // MARK: - Core Data stack
     
-    let instance = CoreDataManager()
+    static let instance = CoreDataManager()
     lazy var context = CoreDataManager().persistentContainer.viewContext
     lazy var persistentContainer: NSPersistentContainer = {
         /*
