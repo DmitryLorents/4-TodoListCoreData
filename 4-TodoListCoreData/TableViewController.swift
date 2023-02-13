@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
     
-    var tasks: [String] = []
+    var tasks: [Tasks] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
