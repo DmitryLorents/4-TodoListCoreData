@@ -16,6 +16,7 @@
 		047FF313299950920006FA26 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FF312299950920006FA26 /* TableViewController.swift */; };
 		04CD852B299A844200472CFF /* Tasks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD8529299A844200472CFF /* Tasks+CoreDataClass.swift */; };
 		04CD852C299A844200472CFF /* Tasks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD852A299A844200472CFF /* Tasks+CoreDataProperties.swift */; };
+		04CD852F299A854600472CFF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD852E299A854600472CFF /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		047FF312299950920006FA26 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		04CD8529299A844200472CFF /* Tasks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataClass.swift"; sourceTree = "<group>"; };
 		04CD852A299A844200472CFF /* Tasks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tasks+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		04CD852E299A854600472CFF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				04CD8529299A844200472CFF /* Tasks+CoreDataClass.swift */,
 				04CD852A299A844200472CFF /* Tasks+CoreDataProperties.swift */,
+				04CD852E299A854600472CFF /* CoreDataManager.swift */,
 			);
 			path = CoreDataFiles;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				04CD852C299A844200472CFF /* Tasks+CoreDataProperties.swift in Sources */,
 				047FF2FE29994FE10006FA26 /* SceneDelegate.swift in Sources */,
 				047FF313299950920006FA26 /* TableViewController.swift in Sources */,
+				04CD852F299A854600472CFF /* CoreDataManager.swift in Sources */,
 				04CD852B299A844200472CFF /* Tasks+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

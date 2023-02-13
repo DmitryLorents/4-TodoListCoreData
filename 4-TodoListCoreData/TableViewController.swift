@@ -23,7 +23,7 @@ class TableViewController: UITableViewController {
         let saveAction = UIAlertAction(title: "Save", style: .default) { action in
             let tf = alertController.textFields?.first
             if let newTask = tf?.text {
-                self.tasks.insert(newTask, at: 0)
+                self.saveTask(withTitle: newTask)
                 self.tableView.reloadData()
             }
         }
@@ -33,6 +33,10 @@ class TableViewController: UITableViewController {
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true)
+    }
+    
+    func saveTask(withTitle title: String) {
+        
     }
     // MARK: - Table view data source
 
@@ -50,7 +54,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        cell.textLabel?.text = tasks[indexPath.row]
+       // cell.textLabel?.text = tasks[indexPath.row]
 
         return cell
     }
